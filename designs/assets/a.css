@@ -1,0 +1,50 @@
+/* (c) 2026. Preview d6f70a42d9a66bd2. Not licensed. */
+
+:root { --grid: rgba(18, 28, 42, 0.9); --rail: rgba(255, 255, 255, 0.10); }
+
+.dir-a .hero { padding: 88px 0 104px; }
+.dir-a .hero::before, .dir-a .page-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 68px 68px; background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(80% 70% at 60% 40%, #000 30%, transparent 85%); mask-image: radial-gradient(80% 70% at 60% 40%, #000 30%, transparent 85%); }
+.dir-a .field { z-index: -1; }
+.hero-grid { display: grid; grid-template-columns: 6fr 5fr; gap: 56px; align-items: center; }
+.dir-a h1 { font-size: clamp(40px, 4.4vw, 62px); }
+@media (max-width: 1060px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+
+.console { position: relative; background: var(--veil); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line-2); border-radius: 18px; padding: 20px; box-shadow: 0 30px 80px -30px var(--glow); }
+.con-top { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-2); padding: 4px 4px 16px; border-bottom: 1px solid var(--line); }
+.con-top .spec { margin-left: auto; color: var(--ink); font-weight: 600; }
+.live { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 4px var(--line-2); }
+.q { display: grid; gap: 8px; margin: 16px 0; counter-reset: q; }
+.q button { width: 100%; display: grid; grid-template-columns: 96px 1fr auto; align-items: center; gap: 12px; text-align: left; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font: 500 16px/1.2 var(--font); cursor: pointer; transition: border-color .25s, background-color .25s, transform .25s; }
+.q button strong { color: var(--ink); font-weight: 700; font-size: 18px; }
+.q .tag { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--eyebrow); }
+.q .idx { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.q button[aria-pressed="true"] { border-color: var(--ink); background: var(--surface-2); box-shadow: inset 3px 0 0 var(--ink); }
+.q button[aria-pressed="true"] .tag { color: var(--ink); }
+.ill { margin-left: auto; padding: 2px 8px; border: 1px solid var(--line-2); border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--eyebrow); }
+.q button:hover { border-color: var(--muted); }
+.why { min-height: 76px; padding: 14px 16px; border-radius: 12px; background: var(--bg); border: 1px solid var(--line); }
+.why p { font-size: 16px; color: var(--ink); line-height: 1.5; }
+.why-k { display: block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--eyebrow); margin-bottom: 4px; }
+.gcd { height: 3px; margin: 14px 2px 0; background: var(--line); border-radius: 3px; overflow: hidden; }
+.gcd span { display: block; height: 100%; width: 100%; background: var(--ink-2); transform-origin: left; transform: scaleX(0); }
+.con-ctrl { display: flex; gap: 8px; margin-top: 14px; }
+.con-ctrl button { min-height: 44px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); font: 600 15px var(--font); cursor: pointer; }
+.con-ctrl .icon { width: 44px; font-size: 22px; line-height: 1; }
+.con-ctrl .play { flex: 1; }
+.console .pending { margin-top: 14px; }
+
+
+.steps.rail { position: relative; }
+.steps.rail li { background: var(--clear); border-color: var(--line-2); }
+.steps.rail .n { color: var(--ink); font-size: 32px; letter-spacing: -.02em; font-weight: 800; }
+.dir-a .card { border-radius: 10px; }
+.dir-a .sees .card { background: var(--bg); }
+.sees.stack { grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .sees.stack { grid-template-columns: 1fr; } .q button { grid-template-columns: 84px 1fr auto; } }
+.dir-a .roles div { border-radius: 10px; }
+.dir-a .chips.classes { margin-top: 8px; }
+.dir-a .cta-band { background: radial-gradient(50% 120% at 50% 100%, var(--glow), var(--clear) 70%); }

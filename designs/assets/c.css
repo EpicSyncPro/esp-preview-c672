@@ -1,0 +1,45 @@
+/* (c) 2026. Preview d6f70a42d9a66bd2. Not licensed. */
+
+:root { --ring-a: rgba(255, 176, 85, 0.30); --ring-b: rgba(255, 255, 255, 0.22); --hair: rgba(255, 255, 255, 0.14); }
+
+.dir-c h1 { font-size: clamp(44px, 5.6vw, 80px); line-height: 1.02; letter-spacing: -.035em; }
+.dir-c h2 { font-size: clamp(30px, 3.2vw, 46px); letter-spacing: -.03em; }
+.dir-c .page-hero h1 { font-size: clamp(44px, 5vw, 72px); }
+.dir-c .hero { padding: 72px 0 96px; }
+.hero-split { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: center; }
+.dir-c .field { background: radial-gradient(40% 55% at 76% 46%, var(--glow), var(--clear) 70%), radial-gradient(70% 70% at 10% 100%, var(--deep), var(--clear) 70%), var(--bg); }
+@media (max-width: 1060px) { .hero-split { grid-template-columns: 1fr; } .crest-stage { justify-self: start; } }
+
+.crest-stage { position: relative; width: 340px; aspect-ratio: 1; display: grid; place-items: center; justify-self: center; }
+.crest-stage img { position: relative; width: 240px; z-index: 1; filter: drop-shadow(0 24px 40px var(--bg)); }
+.ring { position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--clear), var(--ring-a) 18%, var(--clear) 32%, var(--clear) 52%, var(--ring-b) 68%, var(--clear) 82%);
+  -webkit-mask: radial-gradient(closest-side, transparent 92%, #000 93%, #000 99%, transparent 100%); mask: radial-gradient(closest-side, transparent 92%, #000 93%, #000 99%, transparent 100%);
+  animation: spin 28s linear infinite; }
+.ring::after { content: ""; position: absolute; inset: 22px; border-radius: 50%; border: 1px solid var(--hair); }
+@keyframes spin { to { transform: rotate(1turn); } }
+@media (max-width: 760px) { .crest-stage { width: 220px; } .crest-stage img { width: 150px; } }
+
+
+.service { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--hair); }
+.service li { padding: 28px 28px 8px 0; position: relative; }
+.service li::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 2px; transform: rotate(45deg); background: var(--ink); }
+.service .n { display: block; font-size: 56px; font-weight: 800; line-height: 1; letter-spacing: -.04em; color: var(--muted); margin-bottom: 18px; }
+.service h3 { margin-bottom: 8px; font-size: 21px; }
+@media (max-width: 1060px) { .service { grid-template-columns: repeat(2, 1fr); row-gap: 24px; } }
+@media (max-width: 640px) { .service { grid-template-columns: 1fr; } }
+
+.dir-c .sec { border-top-color: var(--line); }
+.dir-c .sec-head h2 { max-width: 20ch; }
+.dir-c .card { background: var(--clear); border-color: var(--hair); border-radius: 4px; }
+.features.editorial { gap: 0; border-top: 1px solid var(--hair); }
+.features.editorial .card { border: 0; border-bottom: 1px solid var(--hair); border-radius: 0; padding: 28px 28px 28px 0; }
+.sees.editorial .card { border-radius: 0; border-width: 0 0 0 1px; }
+.steps.editorial li { border-radius: 0; background: var(--clear); border-width: 1px 0 0 0; padding-left: 0; }
+.steps.editorial .n { font-size: 40px; color: var(--ink); letter-spacing: -.03em; }
+.dir-c .roles div { border-radius: 4px; }
+.dir-c .log-items h3 { font-size: 18px; }
+.dir-c .quote p { font-size: clamp(22px, 2.4vw, 32px); }
+.dir-c .plan { border-radius: 4px; }
+.dir-c .btn { border-radius: 6px; }
+.dir-c .cta-band h2 { max-width: none; font-size: clamp(30px, 3.2vw, 46px); }
